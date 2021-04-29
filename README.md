@@ -6,7 +6,7 @@
   Apollo GraphQL Express Server starter template based on <abbr title="Aerial Tramway">teleferik</abbr> 🚡
 </p>
 <p align="center">
-  <a href="https://trafello.heroku.app">View API Live</a>
+  <a href="https://trafello.herokuapp.com/graphql">View API Live</a>
   &nbsp;•&nbsp;
   <!--<a href="https://boocard.vercel.app/">View Staged API Live</a>
   &nbsp;•&nbsp; -->
