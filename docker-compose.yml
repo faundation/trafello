@@ -1,0 +1,80 @@
+version: "3.9"
+
+services:
+  init:
+    container_name: trafello-init
+    image: node:15-alpine
+    working_dir: /app
+    volumes:
+      - ./package.json:/app/package.json
+      - ./yarn.lock:/app/yarn.lock
+      - ./node_modules/:/app/node_modules/
+    networks:
+      - net
+    command:
+      - yarn
+
+  dev:
+    container_name: trafello-dev
+    image: node:15-alpine
+    working_dir: /app
+    volumes:
+      - ./src/:/app/src/
+      - ./node_modules/:/app/node_modules/
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./package.json:/app/package.json
+    networks:
+      - net
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    #For local docker-compose development environment
+    command:
+      - yarn
+      - dev
+    # For codespaces or devcontanier development environment
+    # command: /bin/sh -c "while sleep 1000; do :; done"
+
+  serve:
+    container_name: trafello-serve
+    image: node:15-alpine
+    working_dir: /app
+    volumes:
+      - dist:/app/dist
+      - ./node_modules/:/app/node_modules/
+      - ./package.json:/app/package.json
+    networks:
+      - net
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+    #For local docker-compose development environment
+    command:
+      - yarn
+      - serve
+
+  build:
+    container_name: trafello-build
+    image: node:15-alpine
+    working_dir: /app
+    volumes:
+      - ./src/:/app/src/
+      - ./node_modules/:/app/node_modules/
+      - dist:/app/dist/
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./package.json:/app/package.json
+    networks:
+      - net
+    command:
+      - yarn
+      - build
+
+networks:
+  net:
+    driver: bridge
+    name: trafello_net
+  
+volumes:
+  dist:

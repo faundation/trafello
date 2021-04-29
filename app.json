@@ -1,0 +1,14 @@
+{
+  "name": "Trafello Apollo Server Template",
+  "description": "Apollo GraphQL Express Server starter template based on teleferik 🚡",
+  "image": "heroku/nodejs",
+  "repository": "https://github.com/Asim-Tahir/trafello",
+  "keywords": ["apollo", "graphql", "express", "template"],
+  "env": {
+    "LOG_LEVEL": {
+      "required": true,
+      "value": "INFO",
+      "description": "Logger base level. Default is INFO"
+    }
+  }
+}

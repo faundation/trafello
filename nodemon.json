@@ -1,0 +1,11 @@
+{
+  "watch": ["src"],
+  "ext": "ts,js,graphql",
+  "legacyWatch": true,
+  "ignore": ["node_modules", ".git"],
+  "exec": "ts-node src/",
+  "execMap": {
+    "ts": "ts-node",
+    "js": "node"
+  }
+}
