@@ -3,7 +3,7 @@ version: "3.9"
 services:
   init:
     container_name: trafello-init
-    image: node:15-alpine
+    image: node:16-alpine
     working_dir: /app
     volumes:
       - ./package.json:/app/package.json
@@ -16,7 +16,7 @@ services:
 
   dev:
     container_name: trafello-dev
-    image: node:15-alpine
+    image: node:16-alpine
     working_dir: /app
     volumes:
       - ./src/:/app/src/
@@ -38,7 +38,7 @@ services:
 
   serve:
     container_name: trafello-serve
-    image: node:15-alpine
+    image: node:16-alpine
     working_dir: /app
     volumes:
       - dist:/app/dist
@@ -57,7 +57,7 @@ services:
 
   build:
     container_name: trafello-build
-    image: node:15-alpine
+    image: node:16-alpine
     working_dir: /app
     volumes:
       - ./src/:/app/src/
