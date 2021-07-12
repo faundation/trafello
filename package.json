@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "apollo-server-express": "^2.23.0",
+    "apollo-server-express": "^3.0.0",
     "class-validator": "^0.13.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
