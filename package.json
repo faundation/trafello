@@ -28,7 +28,7 @@
     "graphql": "^15.5.0",
     "type-graphql": "^1.1.1",
     "graphql-scalars": "^1.5.0",
-    "graphql-tools": "^7.0.4",
+    "graphql-tools": "^8.0.0",
     "reflect-metadata": "^0.1.13",
     "winston": "^3.3.3"
   },
